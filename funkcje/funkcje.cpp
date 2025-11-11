@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <iomanip>
+#include <cstdlib>
 using namespace std;
 // Funkcja do zadania 1 
 int ile_nog(int kura, int krowa, int swinia) //zbieramy informacje o ilosci zwierząt i mnożymy je przez ilość nóg.
@@ -101,58 +102,89 @@ void robot()
 	
 }
 
-int main() {
-	// ZADANIE 1 ----------------------------	
-	int ku, kr, sw; //tworzymy zmienne dla zwierząt
-
-	cout << "ZADANIE 1 ----------------------------" << endl;
-
-	cout << "Podaj liczbe kur: ";
-	cin >> ku;
-	cout << endl << "Podaj liczbe krow: ";
-	cin >> kr;
-	cout << endl << "Podaj liczbe swin: ";
-	cin >> sw;
-
-	cout << ile_nog(ku, kr, sw);
-
-	// ZADANIE 2 ----------------------------
-
-	int wybor, a2, b2;
-
-	cout << endl << "ZADANIE 2 ----------------------------" << endl;
-
-	cout << "Podaj zadanie ktore chcesz wykonac" << endl;
-
-	cin >> wybor;
-
-	switch (wybor) {
-
-	case 1:
-		cout << endl << "podaj rok do sprawdzenia: " << endl;
-		cin >> a2;
-		czyprzestepny(a2);
-		break;
-
-	case 2: 
-		cout << endl << "podaj dwie calkowite: " << endl;
-		cin >> a2 >> b2;
-		cout << przedzial(a2, b2);
-		break;
-	case 3:
-		nwnmor();
-		break;
-	case 4:
-		srednia();
-		break;
-	case 5:
-		exit(0);
-		break;
-	
+void kpn(int a)
+{
+	int p;
+	int r =(rand() % 3) + 1;
+	cout << r << endl;
+	p = (a - r + 3) % 3; // wykonujemy obliczenie z modulo aby sprawdzić resztę z dzielenia przez 3 żeby otrzymać wynik cykliczny.
+	if (p == 0)
+	{
+		cout << "Remis! " << endl;
 	}
-
+	if (p == 1)
+	{
+		cout << "Wygrywasz! " << endl;
+	}
+	if (p == 2)
+	{
+		cout << "Przegrywasz! " << endl;
+	}
 	
-	// ZADANIE 3 ----------------------------
-	robot();
+}
+
+int main() {
+	srand(time(NULL));
+	//// ZADANIE 1 ----------------------------	
+	//int ku, kr, sw; //tworzymy zmienne dla zwierząt
+
+	//cout << "ZADANIE 1 ----------------------------" << endl;
+
+	//cout << "Podaj liczbe kur: ";
+	//cin >> ku;
+	//cout << endl << "Podaj liczbe krow: ";
+	//cin >> kr;
+	//cout << endl << "Podaj liczbe swin: ";
+	//cin >> sw;
+
+	//cout << ile_nog(ku, kr, sw);
+
+	//// ZADANIE 2 ----------------------------
+
+	//int wybor, a2, b2;
+
+	//cout << endl << "ZADANIE 2 ----------------------------" << endl;
+
+	//cout << "Podaj zadanie ktore chcesz wykonac" << endl;
+
+	//cin >> wybor;
+
+	//switch (wybor) {
+
+	//case 1:
+	//	cout << endl << "podaj rok do sprawdzenia: " << endl;
+	//	cin >> a2;
+	//	czyprzestepny(a2);
+	//	break;
+
+	//case 2: 
+	//	cout << endl << "podaj dwie calkowite: " << endl;
+	//	cin >> a2 >> b2;
+	//	cout << przedzial(a2, b2);
+	//	break;
+	//case 3:
+	//	nwnmor();
+	//	break;
+	//case 4:
+	//	srednia();
+	//	break;
+	//case 5:
+	//	exit(0);
+	//	break;
+	//
+	//}
+
+	//
+	//// ZADANIE 3 ----------------------------
+	//robot();
+
+	// ZADANIE 4 ----------------------------
+
+	int gracz;
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> gracz;
+		kpn(gracz);
+	}
 
 }
