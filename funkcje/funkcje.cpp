@@ -27,36 +27,36 @@ int przedzial(int a, int b)
 {
 	int w = 0; //tworzymy zmienne a i b ktore przechowuja liczby z ktorych bedziemy robic przedzial i tworzymy zmienna pomocnicza w ktora inicjalizujemy wpisujac w = 0;
 
-	if (a > b) //sprawdzamy czy a jest wieksze od b. Jesli tak to kontynuujemy
+	if (a > b)
 	{
-		for (int i = b + 1; i < a; i++) //tworzymy petle for i tworzymy zmienna i ktora inicjalizujemy przypisujac jej wartosc zmiennej b + 1
+		for (int i = b + 1; i < a; i++)
 		{
 			cout << i << endl; // wypisujemy liczbe z przedzialu i robimy odstep linii w celu przejzystosci
 			if (i % 2 == 0) { //sprawdzamy czy dana liczba jest parzysta sprawdzajac czy jest podzielna przez 2
-				w += i;	//jesli jest podzielna dodajemy ja do zmiennej w
+				w += i;
 			}
 		}
 	}
-	else //w przypadku kiedy b jest wieksze od a kontynuujemy tutaj
+	else
 	{
-		for (int i = a + 1; i < b; i++) //tworzymy petle for i tworzymy zmienna i ktora inicjalizujemy przypisujac jej wartosc zmiennej a + 1
+		for (int i = a + 1; i < b; i++)
 		{
 			cout << i << endl; // wypisujemy liczbe z przedzialu i robimy odstep linii w celu przejzystosci
 			if (i % 2 == 0) { //sprawdzamy czy dana liczba jest parzysta sprawdzajac czy jest podzielna przez 2
-				w += i; //jesli jest podzielna dodajemy ja do zmiennej w
+				w += i;
 			}
 		}
 	}
-	return w; // na koniec wypisujemy zmienna w ktora jest wynikiem naszego dodawania
+	return w;
 
 }
 
 void nwnmor()
 {
 	int a[5], p;
-	for (int i = 0; i <= 4; i++) { //uzywajac petli for wypisuje w kazdy element tablicy wartosc wpisana z klawiatury
+	for (int i = 0; i <= 4; i++) {
 		cin >> a[i];
-		for (int x = i; x >= 1; x--) //uzywajac petli for sprawdzam czy podana liczba jest wieksza od poprzedniej. Jesli tak to sprawdzana jest kolejny poprzedni element tablicy
+		for (int x = i; x >= 1; x--)
 		{
 			if (a[x] > a[x - 1]) //jesli warunek (aktualny element tablicy jest wiekszy niz poprzedni) jest prawdziwy dokonujemy zamiany wartosci w tablicy wspomagajac sie wartoscia pomocnicza 
 			{
@@ -74,28 +74,28 @@ void nwnmor()
 void srednia ()
 {
 		int a, b;
-		float w = 0; //deklaruje 3 zmienne, jedna do wypisania ilosci powtorzen, druga do wypisania wartosci ktore bedziemy dodawac do siebie w zmiennej nr 3 ktora inicjalizujemy przy deklaracji
+		float w = 0; 
 		cin >> a; // wpisujemy ile liczb chcemy wpisac
 		for (int i = 0; i < a; i++)
 		{
-			cin >> b; //wypisujemy liczhy ktore pod spodem dodajemy do siebie
+			cin >> b; //wypisujemy liczby ktore pod spodem dodajemy do siebie
 			w += b;
 		}
-		cout << w / a << endl; // wypisujemy srednia 
-		for (int i = 0; i < w / a; i++) // wypisujemy "0" tyle razy ile wychodzi średnia liczb
+		cout << setprecision(0) <<  w / a << endl; // wypisujemy srednia 
+		for (int i = 0; i < w / a; i++)
 		{
-			cout << setprecision(0) << "0";
+			cout << "0";
 		}
 
 }
 
 void robot()
 {
-	int x[4];
+	int x[4]; // tworzymy 4 elementowa tablice na kazda zmiane pozycji robota
 
 	for (int i = 0; i < 4; i++)
 	{
-		cin >> x[i];
+		cin >> x[i]; 
 
 	}
 	cout << endl << "Pozycja robota (" << x[1] - x[3] << "," << x[0] - x[2] << ")" << endl;
@@ -125,60 +125,60 @@ void kpn(int a)
 
 int main() {
 	srand(time(NULL));
-	//// ZADANIE 1 ----------------------------	
-	//int ku, kr, sw; //tworzymy zmienne dla zwierząt
+	// ZADANIE 1 ----------------------------	
+	int ku, kr, sw; //tworzymy zmienne dla zwierząt
 
-	//cout << "ZADANIE 1 ----------------------------" << endl;
+	cout << "ZADANIE 1 ----------------------------" << endl;
 
-	//cout << "Podaj liczbe kur: ";
-	//cin >> ku;
-	//cout << endl << "Podaj liczbe krow: ";
-	//cin >> kr;
-	//cout << endl << "Podaj liczbe swin: ";
-	//cin >> sw;
+	cout << "Podaj liczbe kur: ";
+	cin >> ku;
+	cout << endl << "Podaj liczbe krow: ";
+	cin >> kr;
+	cout << endl << "Podaj liczbe swin: ";
+	cin >> sw;
 
-	//cout << ile_nog(ku, kr, sw);
+	cout << ile_nog(ku, kr, sw);
 
-	//// ZADANIE 2 ----------------------------
+	// ZADANIE 2 ----------------------------
 
-	//int wybor, a2, b2;
+	int wybor, a2, b2;
 
-	//cout << endl << "ZADANIE 2 ----------------------------" << endl;
+	cout << endl << "ZADANIE 2 ----------------------------" << endl;
 
-	//cout << "Podaj zadanie ktore chcesz wykonac" << endl;
+	cout << "Podaj zadanie ktore chcesz wykonac" << endl;
 
-	//cin >> wybor;
+	cin >> wybor;
 
-	//switch (wybor) {
+	switch (wybor) {
 
-	//case 1:
-	//	cout << endl << "podaj rok do sprawdzenia: " << endl;
-	//	cin >> a2;
-	//	czyprzestepny(a2);
-	//	break;
+	case 1:
+		cout << endl << "podaj rok do sprawdzenia: " << endl;
+		cin >> a2;
+		czyprzestepny(a2);
+		break;
 
-	//case 2: 
-	//	cout << endl << "podaj dwie calkowite: " << endl;
-	//	cin >> a2 >> b2;
-	//	cout << przedzial(a2, b2);
-	//	break;
-	//case 3:
-	//	nwnmor();
-	//	break;
-	//case 4:
-	//	srednia();
-	//	break;
-	//case 5:
-	//	exit(0);
-	//	break;
-	//
-	//}
+	case 2: 
+		cout << endl << "podaj dwie calkowite: " << endl;
+		cin >> a2 >> b2;
+		cout << przedzial(a2, b2);
+		break;
+	case 3:
+		nwnmor();
+		break;
+	case 4:
+		srednia();
+		break;
+	case 5:
+		exit(0);
+		break;
+	
+	}
 
-	//
-	//// ZADANIE 3 ----------------------------
-	//robot();
+	
+	// ZADANIE 3 ----------------------------
+	robot();
 
-	// ZADANIE 4 ----------------------------
+	//ZADANIE 4 ----------------------------
 
 	int gracz;
 	for (int i = 0; i < 3; i++)
