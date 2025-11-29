@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="tautologia/tautologia.vcxproj" Id="2b22bb9e-ca4f-40c4-a3ce-e5e349ca1856" />
+</Solution>
