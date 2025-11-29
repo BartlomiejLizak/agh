@@ -4,6 +4,13 @@ using namespace std;
 
 void negacja(bool p, bool q)	//uzywam \n w cout w celu zachowania czytelnosci i przyspieszenia pracy
 {
+	bool p, q, w;
+
+
+	cin >> p;
+
+	cin >> q;
+
 	cout << "negacja p: " << !p << "\nnegacja q: " << !q;
 }
 
@@ -29,7 +36,7 @@ void alternatywa(bool p, bool q)
 		cout << "\nAlternatywa p \\/ q = 0";
 	}
 }
-
+	
 void implikacja(bool p, bool q)
 {
 
