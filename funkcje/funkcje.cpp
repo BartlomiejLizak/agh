@@ -14,11 +14,11 @@ void czyprzestepny(int rok)
 {
 	if (rok % 4 == 0 && (rok % 100 != 0 || rok % 400 == 0)) //sprawdzamy czy rok jest podzielny przez 4 i czy nie jest podzielny przez 100 lub czy jest podzielny przez 400
 	{
-		cout << rok << " jest rokiem przestepnym";
+		cout << rok << " jest rokiem przestepnym" << endl;
 	}
 	else 
 	{	
-		cout << rok << " nie jest rokiem przestepnym";
+		cout << rok << " nie jest rokiem przestepnym" << endl;
 
 	}
 }
@@ -156,11 +156,10 @@ int main() {
 		cin >> a2;
 		czyprzestepny(a2);
 		break;
-
 	case 2: 
 		cout << endl << "podaj dwie calkowite: " << endl;
 		cin >> a2 >> b2;
-		cout << przedzial(a2, b2);
+		cout << przedzial(a2, b2) << endl;
 		break;
 	case 3:
 		nwnmor();
