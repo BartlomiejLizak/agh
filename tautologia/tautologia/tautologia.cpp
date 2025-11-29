@@ -68,4 +68,5 @@ int main()
 	alternatywa(p, q);
 	implikacja(p, q);
 	rownowaznosc(p, q);
+
 }
