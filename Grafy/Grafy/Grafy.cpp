@@ -5,11 +5,12 @@
 
 using namespace std;
 
+
 int main() {
 	// Zadanie 1 -----------------------------------------------------
 	//fstream plik;
-
-	//plik.open("tabliczka.txt", ios::out);
+	//srand(time(0));
+	//plik.open("oceny.txt", ios::out);
 
 	//int** tab, wiersze, kolumny;
 	//cout << "Podaj liczbe wierszy i kolumn w tablicy: ";
@@ -39,7 +40,7 @@ int main() {
 	//{
 	//	for (int j = 1; j < kolumny; j++)
 	//	{
-	//		tab[i][j] = i * j; // przypisuje całą tabliczke mnożenia
+	//		tab[i][j] = rand() % 6 + 1; // przypisuje całą tabliczke mnożenia
 	//	}
 	//}
 
@@ -58,14 +59,30 @@ int main() {
 
 	fstream haslo;
 
+	fstream oceny;
+
 	haslo.open("haslo.txt", ios::in);
+	oceny.open("oceny.txt", ios::in);
 	
 	string zapisane, podane;
 	int wybor = 0;
 
-	int** tab, wiersze, kolumny;
+	int** tab, wiersze = 10, kolumny = 5;
 
 	haslo >> zapisane;
+
+
+	tab = new int* [wiersze];
+
+	for (int i = 0; i < wiersze; i++)
+	{
+		tab[i] = new int [kolumny];
+	}
+
+
+
+	
+
 
 	for (int i = 3; i > 0; i--)
 	{ 
@@ -74,11 +91,11 @@ int main() {
 
 	if (podane == zapisane)
 	{
-		cout << "Witaj rodzicu!" << endl;
+		cout << "Witaj rodzicu!";
 
 		while (wybor != 2)
 		{
-			cout << "opcje: " << endl;
+			cout << endl << "opcje: " << endl;
 
 			cout << "1: pokaz oceny" << endl << "2: wyjdz" << endl;
 
@@ -86,10 +103,28 @@ int main() {
 
 			if (wybor == 1)
 			{
-				cout << 
-			}
+				cout << setw(10) << "polski" << setw(10) << "angielski" << setw(10) << "wf" << setw(10) << "chemia";
+				for (int i = 1; i < wiersze; i++)
+					{
+						for (int j = 1; j < kolumny; j++)
+						{
+							oceny >> tab[i][j]; 
+						}
+					}
 
+			for (int i = 1; i < wiersze; i++)
+				{
+				cout << endl;
+					for (int j = 1; j < kolumny; j++)
+					{
+						cout << setw(10) << tab[i][j];
+					}
+				}
+				
+			}
+			
 		}
+		exit(0);
 	}
 	else
 	{
