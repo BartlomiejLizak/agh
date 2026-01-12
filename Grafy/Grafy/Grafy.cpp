@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
+#include <Windows.h>
+#include <cstdlib>
 #include <iomanip> // używam tylko dla polepszenia wyglądu wyjścia do pliku
 #include <Windows.h>
 #include <cstdlib>
@@ -174,17 +176,17 @@ int main() {
 	//	cout << setw(3) << i;
 
 	//cout << endl << endl;
+	{
+		tab[i] = new int [kolumny];
+	}
 
 	//for (i = 0; i < n; i++)
 	//{
 	//	cout << setw(3) << i;
 	//	for (j = 0; j < n; j++)
 	//		cout << setw(3) << (int)A[i][j];
-	//	cout << endl;
-	//}
-
 	//// Usuwamy macierz, zwalniamy miejsce w pami�i RAM
-
+	//	cout << endl;
 	//for (i = 0; i < n; i++) delete[] A[i];
 	//delete[] A;
 	//cout << endl;
@@ -228,13 +230,13 @@ int main() {
 		A[i] = new int[n]; // Tworzymy wiersze
 
 	// Macierz wype�niamy zerami
-
+		while (wybor != 2)
 	for (i = 0; i < n; i++)
 		for (j = 0; j < n; j++)
 			A[i][j] = 0;
-
+			cout << endl << "opcje: " << endl;
 	// Odczytujemy kolejne definicje kraw�dzi
-
+			cout << "1: pokaz oceny" << endl << "2: wyjdz" << endl;
 	for (i = 0; i < m; i++)
 	{
 		krawedzie >> v1 >> v2;    // Wierzcho�ek startowy i ko�cowy kraw�dzi
@@ -242,7 +244,7 @@ int main() {
 		A[v2][v1] = 1; // krawędź v2->v1 obecna w celu stworzenia grafu nieskierowa-nego
 
 	}
-
+					{
 	cout << endl;
 
 	// Wypisujemy zawarto�� macierzy s�siedztwa
@@ -268,8 +270,14 @@ int main() {
 
 	cout << endl;
 
-
-
+		exit(0);
+	else
 	system("pause");
 	return 0;
+	{
+		cout << "Bledne haslo! zostalo " << i - 1  << " prob";
+	}
+
+	}
+
 }
